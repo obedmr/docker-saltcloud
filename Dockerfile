@@ -3,7 +3,7 @@ MAINTAINER obed.n.munoz@gmail.com
 
 # Software Update
 RUN apt-get update -y
-RUN apt install software-properties-common curl gnupg2 locales alien -y
+RUN apt install software-properties-common curl gnupg2 locales alien openssh-server samba-libs samba-dev -y
 
 # SaltCloud
 RUN curl -Ok https://repo.saltstack.com/apt/debian/9/amd64/latest/SALTSTACK-GPG-KEY.pub
