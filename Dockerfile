@@ -18,4 +18,12 @@ RUN sed -i 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/g' /etc/locale.gen
 RUN locale-gen
 
 # Install extra utilities
-RUN apt-get install tmux  -y
+RUN apt-get install tmux curl -y
+
+# Install golang
+WORKDIR /usr/local
+RUN curl -Ok https://dl.google.com/go/go1.10.linux-amd64.tar.gz
+RUN tar -xzvf go1.10.linux-amd64.tar.gz
+RUN echo "PATH=$PATH:/usr/local/go/bin" > /root/.bashrc
+
+WORKDIR /root
